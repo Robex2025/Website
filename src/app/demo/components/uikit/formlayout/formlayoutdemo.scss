@@ -1,0 +1,20 @@
+.number-color {
+    color: black;
+}
+.center-text {
+    margin: 0 auto;
+}
+.contact-rapide {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    p {
+        line-height: 1.5;
+        font-size: 1.2rem;
+        margin: 1rem;
+    }
+    i {
+        font-size: 1.5rem;
+        margin: 2px;
+    }
+}

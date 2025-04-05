@@ -1,0 +1,37 @@
+.card {
+    border-radius: 5px;
+    .number-color {
+        color: black;
+    }
+    ::ng-deep {
+        .customized-timeline {
+            .p-card-content {
+                padding: 0;
+            }
+            .p-component {
+                font-family: "Archive", sans-serif !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 960px) {
+    ::ng-deep {
+        .customized-timeline {
+            .p-card-title {
+                font-size: 1.2rem;
+            }
+            .p-timeline-event:nth-child(even) {
+                flex-direction: row !important;
+
+                .p-timeline-event-content {
+                    text-align: left !important;
+                }
+            }
+
+            .p-timeline-event-opposite {
+                flex: 0;
+            }
+        }
+    }
+}

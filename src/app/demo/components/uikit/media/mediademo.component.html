@@ -1,0 +1,41 @@
+<div class="grid p-fluid">
+    <div class="col-12">
+        <div class="card">
+            <div class="mb-3 font-bold text-5xl text-center">
+                <span class="text-900">Nos </span>
+                <span class="text-primary-500">réalisations</span>
+            </div>
+            <p-carousel
+                [value]="products"
+                [numVisible]="3"
+                [numScroll]="3"
+                [circular]="false"
+                [responsiveOptions]="carouselResponsiveOptions"
+            >
+                <ng-template let-product pTemplate="item">
+                    <div
+                        class="border-round m-2 text-center p-2"
+                        style="border: 1px solid var(--surface-d)"
+                    >
+                        <div class="my-5">
+                            <img
+                                src="assets/layout/images/test2.jpg"
+                                [alt]="product.name"
+                                class="shadow-4"
+                                width="90%"
+                            />
+                        </div>
+                        <div>
+                            <h5 class="mb-1">Exemple à venir</h5>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-carousel>
+        </div>
+    </div>
+</div>
+
+<!-- <h5 class="mb-1">{{ product.name }}</h5> -->
+<!-- src="assets/demo/images/product/{{
+                                    product.image
+                                }}" -->

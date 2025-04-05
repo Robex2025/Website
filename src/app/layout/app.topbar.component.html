@@ -1,0 +1,153 @@
+<div class="layout-topbar">
+    <a class="layout-topbar-logo" routerLink="">
+        <img
+            class="Logo"
+            src="assets/layout/images/Logo-Gestion-Robex-v4.png"
+            alt="Logo"
+        />
+    </a>
+
+    <!-- Menu Desktop -->
+    <div
+        class="layout-topbar-menu"
+        [ngClass]="{
+            'layout-topbar-menu-mobile-active':
+                layoutService.state.profileSidebarVisible
+        }"
+    >
+        <div class="btn-group">
+            <div class="layout-topbar-menu-content">
+                <a routerLink="/" type="button" class="layout-topbar-action"
+                    >Accueil</a
+                >
+                <a
+                    routerLink="amenagement"
+                    type="button"
+                    class="layout-topbar-action"
+                    >Aménagement Paysager</a
+                >
+                <a routerLink="abris" type="button" class="layout-topbar-action"
+                    >Abris Temporaires</a
+                >
+                <a
+                    routerLink="contact"
+                    type="button"
+                    class="layout-topbar-action"
+                >
+                    Contact
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu Mobile (Hamburger) -->
+    <button
+        #menubutton
+        class="p-link layout-menu-button layout-topbar-button layout-topbar-mobile-button"
+        (click)="toggleSidebar()"
+    >
+        <i class="pi pi-bars"></i>
+    </button>
+
+    <p-sidebar
+        [(visible)]="sidebarVisible"
+        position="left"
+        [baseZIndex]="10000"
+        [fullScreen]="true"
+    >
+        <div class="sidebar-container">
+            <div class="logo-mobil-menu">
+                <a class="layout-topbar-logo-mobile" routerLink="">
+                    <img
+                        class="Logo"
+                        src="assets/layout/images/Logo-Gestion-Robex-v4.png"
+                        alt="Logo"
+                    />
+                </a>
+            </div>
+            <div class="container-mobil-menu">
+                <div class="layout-topbar-menu-content-mobil">
+                    <a
+                        routerLink="/"
+                        class="layout-topbar-action-mobil"
+                        (click)="closeSidebarWithDelay()"
+                        >À Propos</a
+                    >
+                    <a
+                        routerLink="amenagement"
+                        class="layout-topbar-action-mobil"
+                        (click)="closeSidebarWithDelay()"
+                        >Aménagement Paysager</a
+                    >
+                    <a
+                        routerLink="abris"
+                        class="layout-topbar-action-mobil"
+                        (click)="closeSidebarWithDelay()"
+                        >Abris Temporaires</a
+                    >
+                    <a
+                        routerLink="contact"
+                        class="layout-topbar-action-mobil"
+                        (click)="closeSidebarWithDelay()"
+                    >
+                        Contact
+                    </a>
+                </div>
+            </div>
+
+            <div class="menu-footer">
+                <div>
+                    <!-- Section Contact Us -->
+                    <div
+                        class="text-center w-full md:w-6/12 flex-col items-center justify-center py-5"
+                    >
+                        <h3 class="text-lg font-bold">Nous Contacter</h3>
+                        <p>
+                            Téléphone 1:
+                            <a href="tel:+438-377-3924 ">438-377-3924</a>
+                        </p>
+                        <p>
+                            Téléphone 2:
+                            <a href="tel:+514-452-965">514-452-9657</a>
+                        </p>
+                        <p>
+                            Email:
+                            <a href="mailto:gestionrobexinc@gmail.com"
+                                >gestionrobexinc&#64;gmail.com</a
+                            >
+                        </p>
+                    </div>
+
+                    <div>
+                        <p-divider layout="horizontal" class="!hidden md:!flex"
+                            ><b></b
+                        ></p-divider>
+                    </div>
+
+                    <!-- Section Nos Fournisseurs -->
+                    <div
+                        class="text-center w-full md:w-6/12 flex-col items-center justify-center py-5"
+                    >
+                        <h3 class="text-lg font-bold">
+                            Suivez- nous sur les réseaux sociaux
+                        </h3>
+                        <div class="icons-group">
+                            <a href="https://www.instagram.com" target="_blank"
+                                ><i
+                                    class="pi pi-instagram"
+                                    style="font-size: 2rem"
+                                ></i
+                            ></a>
+                            <a href="https://www.facebook.com" target="_blank"
+                                ><i
+                                    class="pi pi-facebook"
+                                    style="font-size: 2rem"
+                                ></i
+                            ></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </p-sidebar>
+</div>

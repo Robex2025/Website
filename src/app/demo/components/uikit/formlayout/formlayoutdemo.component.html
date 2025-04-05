@@ -1,0 +1,114 @@
+<div class="col-12">
+    <div
+        class="text-center w-full md:w-6/12 flex-col items-center justify-center py-5"
+    >
+        <div class="mb-3 font-bold text-5xl text-center">
+            <h1 class="text-900">Contact</h1>
+        </div>
+        <div class="contact-rapide">
+            <p>
+                <i class="pi pi-phone"></i>
+                <a href="tel:+438-377-3924 "> 438-377-3924</a>
+            </p>
+            <p>
+                <i class="pi pi-phone"></i>
+                <a href="tel:+514-452-965"> 514-452-9657</a>
+            </p>
+            <p>
+                <i class="pi pi-envelope"></i>
+                <a href="mailto:gestionrobexinc@gmail.com">
+                    gestionrobexinc&#64;gmail.com</a
+                >
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="col-12">
+    <form [formGroup]="contact" method="POST" (ngSubmit)="onSubmit()">
+        <div class="mb-3 font-bold text-5xl text-center">
+            <h1 class="text-900">
+                Demande de <span class="text-primary-500">soumission</span>
+            </h1>
+        </div>
+        <div class="p-fluid p-formgrid grid">
+            <div class="field col-12 md:col-6">
+                <label htmlFor="nom">Nom</label>
+                <input
+                    formControlName="nom"
+                    type="text"
+                    name="nom"
+                    pInputText
+                    id="nom"
+                    required
+                />
+            </div>
+            <div class="field col-12 md:col-6">
+                <label htmlFor="prenom">Prénom</label>
+                <input
+                    name="prenom"
+                    formControlName="prenom"
+                    pInputText
+                    id="prenom"
+                    type="text"
+                    required
+                />
+            </div>
+            <div class="field col-12">
+                <label htmlFor="email">Email</label>
+                <input
+                    type="email"
+                    name="email"
+                    pInputTextarea
+                    id="email"
+                    rows="4"
+                    formControlName="email"
+                    required
+                />
+            </div>
+            <div class="field col-12 md:col-12">
+                <label htmlFor="city">Ville</label>
+                <input
+                    formControlName="ville"
+                    name="ville"
+                    pInputText
+                    id="city"
+                    type="text"
+                    required
+                />
+            </div>
+            <div class="field col-12 md:col-12">
+                <label htmlFor="phone">Numéro téléphone</label>
+                <input
+                    formControlName="phone"
+                    name="phone"
+                    pInputText
+                    id="phone"
+                    type="text"
+                    required
+                />
+            </div>
+            <div class="field col-12 md:col-12">
+                <label htmlFor="details">Détails</label>
+                <textarea
+                    id="details"
+                    type="text"
+                    rows="4"
+                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                    name="details"
+                    formControlName="details"
+                ></textarea>
+            </div>
+
+            <div class="field col-12 md:col-12">
+                <button
+                    pButton
+                    pRipple
+                    label="Envoyer"
+                    class="p-3 w-full"
+                    type="submit"
+                ></button>
+            </div>
+        </div>
+    </form>
+</div>

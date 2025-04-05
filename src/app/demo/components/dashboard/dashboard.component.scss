@@ -1,0 +1,295 @@
+/* ------------------------------- Global Styles ------------------------------- */
+
+.about {
+    margin: 0rem 3rem 3rem 3rem;
+
+    .heightIMG {
+        height: 40rem;
+        /* Taille d'image par défaut */
+    }
+    section {
+        p {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+/* ------------------------------- Welcome Section ------------------------------- */
+
+.Welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .black-background {
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 20px;
+        width: 100%;
+        text-align: center;
+        z-index: 2;
+        position: absolute;
+    }
+
+    .start-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    h1,
+    p {
+        text-align: center;
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 4em !important; // Ajuster la taille du titre pour les petits écrans
+    }
+
+    p {
+        font-size: 1.5em !important; // Ajuster la taille du texte pour les petits écrans
+    }
+}
+
+/* ------------------------------- Container Info Section ------------------------------- */
+
+.container-info {
+    h5 {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .what-we-do {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+
+        p {
+            width: 35rem;
+            margin: 0 auto;
+        }
+    }
+}
+
+/* -------------------------------  Section ------------------------------- */
+.icon-custom-color {
+    color: #fcc11d !important;
+}
+
+/* ------------------------------- Services Info Section ------------------------------- */
+
+.Service {
+    // margin-top: 7rem;
+    .surface-ground {
+        .container-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+
+        .service-item {
+            position: relative;
+            display: block;
+            overflow: hidden;
+
+            // Ajout de la transition pour un effet au hover
+            &:hover .service-image {
+                transform: scale(1.1); /* Zoom sur l'image */
+                transition: transform 0.3s ease-in-out; /* Animation fluide */
+            }
+
+            &:hover .service-title-background {
+                background-color: rgba(
+                    0,
+                    0,
+                    0,
+                    0.8
+                ); /* Rendre le fond plus sombre */
+                transition: background-color 0.3s ease-in-out; /* Animation du fond */
+            }
+        }
+
+        .service-image {
+            width: 100%;
+            height: 40rem;
+            max-height: 600px;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out; /* Transition pour le zoom de l'image */
+        }
+
+        .service-title-background {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            width: 100%;
+            transition: background-color 0.3s ease-in-out; /* Animation du fond lors du hover */
+
+            .title-section {
+                margin: 0;
+            }
+        }
+    }
+}
+
+.custom-card-position {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .flex-section {
+        width: 30%;
+        .card-container {
+            margin: 1rem;
+            .custom-card {
+                background-color: #1e1e1e;
+
+                padding: 1rem;
+                border-radius: 10px;
+                width: auto;
+                text-align: left;
+                .icon-container {
+                    margin-right: 15px; /* espace entre l'icône et le titre */
+                }
+            }
+        }
+    }
+}
+
+/* ------------------------------- Media Queries ------------------------------- */
+
+/* Tablet screens (600px to 1024px) */
+@media (max-width: 1024px) and (min-width: 600px) {
+    .custom-card-position {
+        display: block;
+
+        .flex-section {
+            width: 100%;
+            .card-container {
+                .custom-card {
+                    padding: 2rem;
+                    p {
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+        }
+    }
+    .about {
+        .mobile-padding {
+            padding: 0 !important;
+            margin: 0 auto;
+            width: 80% !important;
+        }
+        section {
+            h1 {
+                text-align: center;
+            }
+            p {
+                font-size: 1.3rem;
+                text-align: justify;
+                hyphens: auto;
+            }
+        }
+
+        .img-container-hidden {
+            display: none;
+        }
+    }
+
+    .container-info {
+        grid-template-columns: 1fr; /* Passe à une seule colonne pour les tablettes */
+    }
+
+    .Service {
+        .surface-ground {
+            .container-info {
+                display: grid;
+                grid-template-columns: 1fr 1fr; /* Utilisation de 2 colonnes pour les tablettes */
+            }
+        }
+    }
+
+    .Welcome {
+        p {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+/* Mobile screens (below 600px) */
+@media (max-width: 600px) {
+    .custom-card-position {
+        display: block;
+
+        .flex-section {
+            width: 100%;
+            .card-container {
+                .custom-card {
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+    .about {
+        .mobile-padding {
+            padding: 0 !important;
+        }
+        section {
+            p {
+                font-size: 1rem;
+                text-align: justify;
+                hyphens: auto;
+            }
+        }
+
+        .img-container-hidden {
+            display: none;
+        }
+    }
+
+    .Welcome {
+        h1 {
+            font-size: 2.5rem !important; /* Réduit la taille du titre pour les tablettes */
+        }
+    }
+
+    .container-info {
+        .what-we-do {
+            p {
+                width: 15rem; /* Réduit la largeur du texte sur mobile */
+            }
+        }
+    }
+
+    /* Services - Pour s'assurer que les images et les titres ne débordent pas sur mobile */
+    .Service {
+        .surface-ground {
+            .container-info {
+                grid-template-columns: 1fr; /* Passe à une seule colonne sur mobile */
+            }
+        }
+
+        .service-image {
+            height: 20rem; /* Réduit la hauteur de l'image sur mobile */
+        }
+
+        .service-title-background {
+            font-size: 1rem; /* Réduit la taille de la police pour le titre sur mobile */
+        }
+    }
+}

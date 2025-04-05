@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="mb-5 font-bold text-5xl text-center">
+        <h1 class="text-900">
+            Les étapes pour concrétiser
+            <span class="text-primary-500">votre espace de rêve</span>
+        </h1>
+    </div>
+    <p-timeline
+        [value]="events1"
+        align="alternate"
+        styleClass="customized-timeline"
+    >
+        <ng-template pTemplate="marker" let-event>
+            <span
+                class="flex z-1 w-2rem h-2rem align-items-center justify-content-center text-white border-circle shadow-2"
+                [style.backgroundColor]="event.color"
+            >
+                <p class="number-color">{{ event.icon }}</p>
+            </span>
+        </ng-template>
+        <ng-template pTemplate="content" let-event>
+            <p-card class="custom-size" [header]="event.status"></p-card>
+        </ng-template>
+    </p-timeline>
+</div>

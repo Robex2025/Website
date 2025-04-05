@@ -1,0 +1,36 @@
+.layout-footer {
+    footer {
+        .footer-position {
+            display: flex;
+            flex-direction: row;
+        }
+        margin-top: 2rem;
+        text-align: center;
+        ul {
+            list-style-type: none;
+        }
+        .icons-group {
+            margin-bottom: 1.5rem;
+            a {
+                color: #ffffff;
+                i {
+                    margin: 0 1rem;
+                    cursor: pointer;
+                    transition: color 0.3s ease;
+
+                    &:hover {
+                        color: #fcc11d;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 600px) {
+    .footer-position {
+        display: block !important;
+        .bar-hidden {
+            display: none;
+        }
+    }
+}

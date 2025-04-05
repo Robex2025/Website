@@ -1,0 +1,54 @@
+<section class="form">
+    <div class="contact">
+        <h2>Demande de Soumission</h2>
+        <form [formGroup]="contact">
+            <div class="form-group">
+                <div class="input-nom-prenom">
+                    <span class="p-float-label" variant="on">
+                        <input
+                            pInputText
+                            id="nom"
+                            formControlName="nom"
+                            autocomplete="off"
+                        />
+                        <label for="nom">Nom</label>
+                    </span>
+                    <p-floatlabel variant="on">
+                        <input
+                            pInputText
+                            id="prenom"
+                            formControlName="prenom"
+                            autocomplete="off"
+                        />
+                        <label for="prenom">Prénom</label>
+                    </p-floatlabel>
+                </div>
+
+                <p-floatlabel variant="on">
+                    <input
+                        pInputText
+                        id="email"
+                        formControlName="email"
+                        autocomplete="off"
+                    />
+                    <label for="email">Email</label>
+                </p-floatlabel>
+
+                <p-floatlabel variant="on">
+                    <textarea
+                        pTextarea
+                        id="note"
+                        formControlName="note"
+                        rows="5"
+                        style="resize: none"
+                    ></textarea>
+                    <label for="note">Note supplémentaire</label>
+                </p-floatlabel>
+
+                <button type="submit" class="submit-btn">
+                    Envoyer la demande
+                </button>
+            </div>
+        </form>
+    </div>
+</section>

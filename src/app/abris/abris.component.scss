@@ -1,0 +1,196 @@
+.Welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    overflow: hidden;
+
+    /* Conteneur de l'image */
+    .image-wrapper {
+        width: 100%;
+        height: 100vh; /* L'image prend toute la hauteur de la fenêtre */
+    }
+
+    .start-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Assure que l'image couvre toute la zone sans déformation */
+        z-index: -1; /* Place l'image derrière tout le reste du contenu */
+    }
+
+    /* Conteneur du contenu au-dessus de l'image */
+    .content-wrapper {
+        position: absolute; /* Positionner par-dessus l'image */
+        top: 50%; /* Centrer verticalement */
+        left: 50%; /* Centrer horizontalement */
+        transform: translate(
+            -50%,
+            -50%
+        ); /* Déplacer pour centrer le contenu précisément */
+        width: 100%;
+        z-index: 1; /* Place le contenu au-dessus de l'image */
+    }
+
+    .black-background {
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 20px 20px;
+        width: 100%;
+        text-align: center;
+        z-index: 2;
+        position: relative;
+        h1 {
+            margin: 0;
+            font-size: 3.5rem;
+            color: #fff;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    }
+
+    .menu-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+        width: 100%;
+        max-width: 800px;
+        padding: 0 20px;
+        z-index: 2;
+        position: relative;
+        margin: 20px auto 0 auto;
+    }
+
+    .menu-item {
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 12px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: #fff;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+    }
+
+    .menu-item.open {
+        height: 150px;
+        padding: 12px 20px 15px 20px;
+        transition: height 0.5s ease-in-out, padding 0.3s ease;
+    }
+
+    .menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%; /* Occupe toute la largeur de l'élément */
+
+        h2 {
+            margin: 0 0 0 1rem;
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        i {
+            color: #fcc11d;
+        }
+    }
+
+    .menu-content {
+        margin-top: 10px;
+        padding: 15px;
+        border-radius: 5px;
+        color: #fff;
+        .custom-size {
+            font-size: 1.1rem;
+        }
+    }
+
+    /* Animation de la flèche */
+    .rotate-up {
+        transform: rotate(180deg);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .rotate-down {
+        transform: rotate(0deg);
+        transition: transform 0.3s ease-in-out;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .Welcome {
+        .black-background {
+            h1 {
+                font-size: 5rem !important;
+            }
+        }
+
+        .menu-container {
+            gap: 15px;
+            margin-top: 20px;
+            max-width: 700px;
+            padding: 0 20px;
+        }
+
+        .menu-item.open {
+            height: 220px;
+        }
+
+        .menu-header {
+            h2 {
+                font-size: 1.4rem;
+            }
+        }
+    }
+    .menu-content {
+        .custom-size {
+            font-size: 1rem !important;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .Welcome {
+        .black-background {
+            margin-top: 75px;
+            h1 {
+                font-size: 2.2rem !important;
+            }
+        }
+
+        .menu-container {
+            gap: 10px;
+            margin-top: 15px;
+            max-width: 500px;
+
+            .menu-item.open {
+                height: 250px;
+            }
+
+            .menu-header {
+                h2 {
+                    font-size: 1.2rem;
+                    margin: 0 0 0 0;
+                }
+            }
+        }
+
+        .menu-content {
+            padding: 5px 5px 5px 0px;
+        }
+    }
+    .menu-content {
+        .custom-size {
+            font-size: 1rem !important;
+        }
+    }
+}
